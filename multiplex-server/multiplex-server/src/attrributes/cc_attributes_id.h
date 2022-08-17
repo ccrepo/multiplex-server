@@ -23,7 +23,7 @@ public:
   }
   
 private:
-  const uint64_t _attributes_id { false };
+  const uint64_t _attributes_id;
   inline static std::atomic<uint64_t> _attributes_id_counter { 0 };
   
 private:
