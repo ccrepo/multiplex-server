@@ -1,0 +1,82 @@
+{
+  "process": {
+    "type": "server"
+  },
+  "admin": {
+    "username": "cc",
+    "password": "password"
+  },
+  "diagnostics": {
+    "log": {
+      "level": "info",
+      "filename" : "/tmp/server.log",
+      "output": true,
+      "truncate": true, 
+      "console": true,
+      "dump_connections": false
+    }
+  },
+  "network": {
+    "connection": {
+      "bind_ip" : "127.0.0.1",
+      "port" : 9999,
+      "buffer_size": 1024,
+      "read": {
+        "timeout": 250,
+        "retry": 2
+      },
+      "write": {
+        "timeout": 250,
+        "retry": 10
+      },
+      "clients": {
+        "max": {
+          "concurrent": 20,
+          "pending": 1,
+          "message_size": 10000
+        }
+      }
+    }
+  },
+  "capacity": {
+    "listener": {
+      "pool": {
+        "size" : 1
+      }
+    },
+    "reader": {
+      "pool": {
+        "size" : 20
+      }
+    },
+    "writer": {
+      "pool": {
+        "size" : 20
+      }
+    },
+    "datamodel": {
+      "pool": {
+        "size" : 20
+      }
+    }
+  },
+  "internal": {
+    "wait": {
+      "service": {
+        "exit": 1000
+      }
+    },
+    "test": {
+      "speed": {
+        "slow": false
+      }
+    }
+  },
+  "protocol": {
+    "header": {
+      "size": {
+        "length": 15
+      }
+    }
+  }
+}

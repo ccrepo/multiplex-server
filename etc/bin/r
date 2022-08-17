@@ -1,0 +1,5 @@
+export CC_LOGLEVEL=trace
+#export CC_LOGLEVEL=debug
+#export CC_LOGLEVEL=info
+
+/Users/cc/Library/Developer/Xcode/DerivedData/battleship-esecrkfauvrcxjfjnizaqvtgtgci/Build/Products/Debug/battleship -f /tmp/f.txt
